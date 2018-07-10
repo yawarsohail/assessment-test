@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65E77FD611789F306E22F3E0 /* libPods-assessment-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 822CA662D5B810CABD01091D /* libPods-assessment-test.a */; };
 		8CA037AB20F4F91400A81E55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037AA20F4F91400A81E55 /* AppDelegate.m */; };
 		8CA037AE20F4F91400A81E55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037AD20F4F91400A81E55 /* ViewController.m */; };
 		8CA037B120F4F91400A81E55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA037AF20F4F91400A81E55 /* Main.storyboard */; };
 		8CA037B320F4F91600A81E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA037B220F4F91600A81E55 /* Assets.xcassets */; };
 		8CA037B620F4F91600A81E55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA037B420F4F91600A81E55 /* LaunchScreen.storyboard */; };
 		8CA037B920F4F91600A81E55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037B820F4F91600A81E55 /* main.m */; };
+		8CA037C320F5013300A81E55 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037C220F5013300A81E55 /* WeatherViewController.m */; };
+		8CA037C620F5014700A81E55 /* HotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037C520F5014700A81E55 /* HotelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		455C406B4A61A408140A8734 /* Pods-assessment-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assessment-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-assessment-test/Pods-assessment-test.debug.xcconfig"; sourceTree = "<group>"; };
+		822CA662D5B810CABD01091D /* libPods-assessment-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-assessment-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA037A620F4F91400A81E55 /* assessment-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "assessment-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA037A920F4F91400A81E55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8CA037AA20F4F91400A81E55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +31,11 @@
 		8CA037B520F4F91600A81E55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CA037B720F4F91600A81E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CA037B820F4F91600A81E55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CA037C120F5013300A81E55 /* WeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		8CA037C220F5013300A81E55 /* WeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		8CA037C420F5014700A81E55 /* HotelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelViewController.h; sourceTree = "<group>"; };
+		8CA037C520F5014700A81E55 /* HotelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelViewController.m; sourceTree = "<group>"; };
+		BC78FE21D7DDEAC454409300 /* Pods-assessment-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assessment-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-assessment-test/Pods-assessment-test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E77FD611789F306E22F3E0 /* libPods-assessment-test.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C3ADDFA096D4B3231501F63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				822CA662D5B810CABD01091D /* libPods-assessment-test.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3190F344786B3648B9E0CD50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				455C406B4A61A408140A8734 /* Pods-assessment-test.debug.xcconfig */,
+				BC78FE21D7DDEAC454409300 /* Pods-assessment-test.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8CA0379D20F4F91400A81E55 = {
 			isa = PBXGroup;
 			children = (
 				8CA037A820F4F91400A81E55 /* assessment-test */,
 				8CA037A720F4F91400A81E55 /* Products */,
+				3190F344786B3648B9E0CD50 /* Pods */,
+				1C3ADDFA096D4B3231501F63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +88,8 @@
 		8CA037A820F4F91400A81E55 /* assessment-test */ = {
 			isa = PBXGroup;
 			children = (
+				8CA037C020F500F800A81E55 /* WeatherComponent */,
+				8CA037BF20F500E400A81E55 /* HotelComponent */,
 				8CA037A920F4F91400A81E55 /* AppDelegate.h */,
 				8CA037AA20F4F91400A81E55 /* AppDelegate.m */,
 				8CA037AC20F4F91400A81E55 /* ViewController.h */,
@@ -71,6 +103,24 @@
 			path = "assessment-test";
 			sourceTree = "<group>";
 		};
+		8CA037BF20F500E400A81E55 /* HotelComponent */ = {
+			isa = PBXGroup;
+			children = (
+				8CA037C420F5014700A81E55 /* HotelViewController.h */,
+				8CA037C520F5014700A81E55 /* HotelViewController.m */,
+			);
+			path = HotelComponent;
+			sourceTree = "<group>";
+		};
+		8CA037C020F500F800A81E55 /* WeatherComponent */ = {
+			isa = PBXGroup;
+			children = (
+				8CA037C120F5013300A81E55 /* WeatherViewController.h */,
+				8CA037C220F5013300A81E55 /* WeatherViewController.m */,
+			);
+			path = WeatherComponent;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +128,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CA037BC20F4F91600A81E55 /* Build configuration list for PBXNativeTarget "assessment-test" */;
 			buildPhases = (
+				1073605BCC6FF65A48831605 /* [CP] Check Pods Manifest.lock */,
 				8CA037A220F4F91400A81E55 /* Sources */,
 				8CA037A320F4F91400A81E55 /* Frameworks */,
 				8CA037A420F4F91400A81E55 /* Resources */,
@@ -136,12 +187,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1073605BCC6FF65A48831605 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-assessment-test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CA037A220F4F91400A81E55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8CA037AE20F4F91400A81E55 /* ViewController.m in Sources */,
+				8CA037C320F5013300A81E55 /* WeatherViewController.m in Sources */,
+				8CA037C620F5014700A81E55 /* HotelViewController.m in Sources */,
 				8CA037B920F4F91600A81E55 /* main.m in Sources */,
 				8CA037AB20F4F91400A81E55 /* AppDelegate.m in Sources */,
 			);
@@ -281,6 +355,7 @@
 		};
 		8CA037BD20F4F91600A81E55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 455C406B4A61A408140A8734 /* Pods-assessment-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +372,7 @@
 		};
 		8CA037BE20F4F91600A81E55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC78FE21D7DDEAC454409300 /* Pods-assessment-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -26,4 +26,9 @@
 }
 
 
+- (IBAction)actionHotel:(id)sender {
+}
+
+- (IBAction)actionWeather:(id)sender {
+}
 @end

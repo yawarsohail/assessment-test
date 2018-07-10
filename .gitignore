@@ -1,0 +1,8 @@
+.DS_Store
+Podfile.lock
+ipa
+Pods/
+UserInterfaceState.xcuserstate
+Breakpoints_v2.xcbkptlist
+WorkspaceSettings.xcsettings
+

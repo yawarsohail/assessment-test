@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WeatherViewController.h
 //  assessment-test
 //
 //  Created by Guest on 10/07/2018.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-- (IBAction)actionHotel:(id)sender;
-- (IBAction)actionWeather:(id)sender;
+@interface WeatherViewController : UIViewController
 
 @end
-
