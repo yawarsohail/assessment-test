@@ -15,5 +15,9 @@
 @protocol HotelProtocol <NSObject>
 
 -(NSString*) getHotelName;
+-(NSNumber*) getHotelStars;
+-(NSString*) getHotelPlace;
+-(NSString*) getPhotoId;
+-(NSString*) getHotelPhoto;
 
 @end

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HotelViewController : UIViewController
+@interface HotelViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (retain,nonatomic) NSArray *passedInfo;
+@property (weak, nonatomic) IBOutlet UITableView *hotelTableView;
 @end

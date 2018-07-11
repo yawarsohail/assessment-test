@@ -140,6 +140,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aZT-Rw-tbk" id="h3V-D7-OmH"/>
+                                    <outlet property="delegate" destination="aZT-Rw-tbk" id="rc0-3I-eQQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,6 +155,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CrR-2f-515"/>
                     </view>
+                    <connections>
+                        <outlet property="hotelTableView" destination="VwL-HF-zF6" id="QKf-Fb-ORU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqQ-3k-qky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

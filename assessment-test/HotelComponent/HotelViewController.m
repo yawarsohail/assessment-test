@@ -7,7 +7,7 @@
 //
 
 #import "HotelViewController.h"
-
+#import "HotelTableViewCell.h"
 @interface HotelViewController ()
 
 @end
@@ -33,5 +33,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    HotelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
+    [cell customizeCellWithData:[_passedInfo objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_passedInfo count];
+}
+
 
 @end

@@ -64,4 +64,50 @@ static DataCenter *dataCenter=nil;
     }
 }
 
+
+-(UIImage*) getImageFromUrlOrCache:(NSString *)url fileName:(NSString *)fileName delegate:(id<WebrequestUIUpdateProtocol>)delegate{
+    NSString* iden = fileName;
+    if(url != nil && ![url isEqualToString:@""]){
+        NSString* cachesDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        cachesDirectory = [cachesDirectory stringByAppendingString:@"/photos/"];
+        
+        BOOL isDir = NO;
+        NSFileManager *manager = [NSFileManager defaultManager];
+        [manager fileExistsAtPath:cachesDirectory isDirectory:&isDir];
+        
+        if(!isDir)
+            [manager createDirectoryAtPath:cachesDirectory withIntermediateDirectories:YES attributes:nil error:NULL];
+        
+        fileName = [[url lastPathComponent] stringByDeletingPathExtension];
+        NSString *file = [cachesDirectory stringByAppendingPathComponent:fileName];
+        
+        UIImage *img = [UIImage imageWithContentsOfFile:file];
+        [delegate updateImage:img identifier:nil];
+        
+        if(img==nil){
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                NSError *err;
+                NSData *downloadedData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:NSUncachedRead error:&err];
+                if(err)
+                    NSLog(@"Error  : %@",[err description]);
+                
+                if (downloadedData) {
+                    [downloadedData writeToFile:file atomically:YES];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^(){
+                        if(delegate != nil)
+                        {
+                            UIImage *newiImg = [UIImage imageWithData:downloadedData];
+                            [delegate updateImage:newiImg identifier:iden];
+                        }
+                    });
+                }
+            });
+        }
+        
+        return img;
+    }
+    return nil;
+}
+
 @end

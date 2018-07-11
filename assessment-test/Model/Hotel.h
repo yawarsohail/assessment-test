@@ -12,10 +12,14 @@
 @interface Hotel : NSObject<HotelProtocol> {
     NSString *_name;
     NSNumber *_stars;
+    NSString *_place;
+    NSString *_photo;
 }
 
 @property (copy) NSString *name;
 @property (copy) NSNumber *stars;
+@property (copy) NSString *place;
+@property (copy) NSString *photo;
 
 -(void) setHotelFrom:(NSDictionary *) dictionary;
 +(NSArray*) getFiveStarHotels:(NSMutableArray*)hotels;
