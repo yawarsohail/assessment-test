@@ -25,6 +25,8 @@ id<HotelProtocol> mydata;
 -(void) customizeCellWithData:(id<HotelProtocol>)data {
     mydata = data;
     [self.mainLabel setText:[data getHotelName]];
+    [self.detailLabel setText:[data getHotelPlace]];
+    [self.statusLabel setText:[NSString stringWithFormat:@"%@ stars", [data getHotelStars]]];
     NSString* url = [data getHotelPhoto];
     self.imgView.image = [UIImage imageNamed:@"avatar"];
     UIImage *img = [[DataCenter Instance] getImageFromUrlOrCache:url fileName:[data getPhotoId] delegate:self];

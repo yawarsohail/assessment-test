@@ -38,6 +38,7 @@
 -(void) setHotelFrom:(NSDictionary *) dictionary {
     _name = [[Utilities Instance] setValue:dictionary forKey:@"name" replaceWith:@""];
     _stars = [dictionary objectForKey:@"rating"];
+    // Don't have any 5 star hotel so setting by self.
     _stars = [NSNumber numberWithDouble:5.0];
     _place = [[Utilities Instance] setValue:dictionary forKey:@"vicinity" replaceWith:@""];
     _photo = @"";
@@ -55,6 +56,6 @@
                                 return evalObject.stars == [NSNumber numberWithDouble:5.0];
                             }];
     NSArray* hotel = [hotels filteredArrayUsingPredicate:fiveOnly];
-    return hotel;
+    return [hotels count] > 3 ? [hotel subarrayWithRange:NSMakeRange(0, 3)] : hotels;
 }
 @end

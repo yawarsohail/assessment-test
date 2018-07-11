@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WebrequestUIUpdateProtocol.h"
+#import <CoreLocation/CoreLocation.h>
+
 @interface ViewController : UIViewController<WebrequestUIUpdateProtocol>
 
 - (IBAction)actionHotel:(id)sender;

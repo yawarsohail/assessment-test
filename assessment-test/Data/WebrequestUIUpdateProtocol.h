@@ -16,16 +16,7 @@
 @protocol WebrequestUIUpdateProtocol <NSObject>
 
 @optional
--(void) reloadView;
-
-@optional
--(void) responseFromWServer:(NSDictionary *)responseDict;
-
-@optional
 -(void) responseFromWServer:(NSDictionary *)responseDict withIdentifier:(NSString *)identifier;
-
-@optional
--(void) responseFromWServer:(NSDictionary *)response withRequest:(ASIHTTPRequest *)request;
 
 @optional
 -(void) updateImage:(UIImage *)image identifier:(NSString *)identifier;

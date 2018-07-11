@@ -51,6 +51,4 @@ static Constants *constants=nil;
     return weatherKey;
 }
 
-//https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA_A6r5wvMYAgOMaDR136FZDN-bgeig07dZB5xZM9E-uONuvdQ0weyqk4rFGEB_qA2qJ2v0QU3Cg6imjocPWmfqUNJrWvYvoatsgHplt3umQTJ8cJGzTZEs2CsfCe8OjZdEhCiIzIs41_4lzXUeClierWKGhRF0rts0IZy_sFAT6ebTv8jDzLQ4A&key=AIzaSyD-HMhoKtAz7xJrMMYS2zBz3Mx_tGks3q4
-
 @end
