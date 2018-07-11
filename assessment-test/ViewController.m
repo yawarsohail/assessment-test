@@ -7,6 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "DataCenter.h"
+#import "DataHolder.h"
+#import "Constants.h"
+#import "Hotel.h"
+#import "HotelViewController.h"
 
 @interface ViewController ()
 
@@ -27,8 +32,31 @@
 
 
 - (IBAction)actionHotel:(id)sender {
+    // TODO : Use location to get lat, lng.
+    [[DataCenter Instance] getHotels:@"24.8607" lng:@"67.0011" delegate:self];
 }
 
 - (IBAction)actionWeather:(id)sender {
 }
+
+-(void) responseFromWServer:(NSDictionary *)response withIdentifier:(NSString *)identifier{
+    if ([identifier isEqualToString:[[Constants Instance] hotelKey]]) {
+        // TODO: filter only hotels with 5 star rating.
+        NSArray* hotels = [Hotel getFiveStarHotels:[DataHolder Instance].hotels];
+        [self performSegueWithIdentifier:@"showhotelsegue" sender:self];
+    }
+    else if ([identifier isEqualToString:[[Constants Instance] weatherKey]]) {
+        
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"zoomImage"]){
+        NSArray* hotels = [Hotel getFiveStarHotels:[DataHolder Instance].hotels];
+        HotelViewController *nextViewController = segue.destinationViewController;
+        nextViewController.passedInfo = hotels;
+    }
+    
+}
+
 @end

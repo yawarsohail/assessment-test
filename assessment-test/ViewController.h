@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "WebrequestUIUpdateProtocol.h"
+@interface ViewController : UIViewController<WebrequestUIUpdateProtocol>
 
 - (IBAction)actionHotel:(id)sender;
 - (IBAction)actionWeather:(id)sender;

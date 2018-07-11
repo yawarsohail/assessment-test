@@ -16,6 +16,12 @@
 		8CA037B920F4F91600A81E55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037B820F4F91600A81E55 /* main.m */; };
 		8CA037C320F5013300A81E55 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037C220F5013300A81E55 /* WeatherViewController.m */; };
 		8CA037C620F5014700A81E55 /* HotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037C520F5014700A81E55 /* HotelViewController.m */; };
+		8CA037CB20F53ECE00A81E55 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037CA20F53ECE00A81E55 /* Constants.m */; };
+		8CA037CE20F5464100A81E55 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037CD20F5464100A81E55 /* DataCenter.m */; };
+		8CA037D220F54C6E00A81E55 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037D120F54C6E00A81E55 /* Utilities.m */; };
+		8CA037D520F59B3C00A81E55 /* HotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037D420F59B3C00A81E55 /* HotelTableViewCell.m */; };
+		8CA037D820F5A1E500A81E55 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037D720F5A1E500A81E55 /* Hotel.m */; };
+		8CA037DB20F5A41D00A81E55 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037DA20F5A41D00A81E55 /* DataHolder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,20 @@
 		8CA037C220F5013300A81E55 /* WeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		8CA037C420F5014700A81E55 /* HotelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelViewController.h; sourceTree = "<group>"; };
 		8CA037C520F5014700A81E55 /* HotelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelViewController.m; sourceTree = "<group>"; };
+		8CA037C920F53ECE00A81E55 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		8CA037CA20F53ECE00A81E55 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		8CA037CC20F5464100A81E55 /* DataCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
+		8CA037CD20F5464100A81E55 /* DataCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
+		8CA037CF20F547AB00A81E55 /* WebrequestUIUpdateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebrequestUIUpdateProtocol.h; sourceTree = "<group>"; };
+		8CA037D020F54C6E00A81E55 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		8CA037D120F54C6E00A81E55 /* Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		8CA037D320F59B3C00A81E55 /* HotelTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelTableViewCell.h; sourceTree = "<group>"; };
+		8CA037D420F59B3C00A81E55 /* HotelTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelTableViewCell.m; sourceTree = "<group>"; };
+		8CA037D620F5A1E500A81E55 /* Hotel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
+		8CA037D720F5A1E500A81E55 /* Hotel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
+		8CA037D920F5A41D00A81E55 /* DataHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHolder.h; sourceTree = "<group>"; };
+		8CA037DA20F5A41D00A81E55 /* DataHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHolder.m; sourceTree = "<group>"; };
+		8CA037DC20F5A8EA00A81E55 /* HotelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelProtocol.h; sourceTree = "<group>"; };
 		BC78FE21D7DDEAC454409300 /* Pods-assessment-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assessment-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-assessment-test/Pods-assessment-test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +108,8 @@
 		8CA037A820F4F91400A81E55 /* assessment-test */ = {
 			isa = PBXGroup;
 			children = (
+				8CA037C820F53E5200A81E55 /* Data */,
+				8CA037C720F53E3800A81E55 /* Model */,
 				8CA037C020F500F800A81E55 /* WeatherComponent */,
 				8CA037BF20F500E400A81E55 /* HotelComponent */,
 				8CA037A920F4F91400A81E55 /* AppDelegate.h */,
@@ -108,6 +130,9 @@
 			children = (
 				8CA037C420F5014700A81E55 /* HotelViewController.h */,
 				8CA037C520F5014700A81E55 /* HotelViewController.m */,
+				8CA037D320F59B3C00A81E55 /* HotelTableViewCell.h */,
+				8CA037D420F59B3C00A81E55 /* HotelTableViewCell.m */,
+				8CA037DC20F5A8EA00A81E55 /* HotelProtocol.h */,
 			);
 			path = HotelComponent;
 			sourceTree = "<group>";
@@ -119,6 +144,31 @@
 				8CA037C220F5013300A81E55 /* WeatherViewController.m */,
 			);
 			path = WeatherComponent;
+			sourceTree = "<group>";
+		};
+		8CA037C720F53E3800A81E55 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CA037D620F5A1E500A81E55 /* Hotel.h */,
+				8CA037D720F5A1E500A81E55 /* Hotel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CA037C820F53E5200A81E55 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8CA037C920F53ECE00A81E55 /* Constants.h */,
+				8CA037CA20F53ECE00A81E55 /* Constants.m */,
+				8CA037CC20F5464100A81E55 /* DataCenter.h */,
+				8CA037CD20F5464100A81E55 /* DataCenter.m */,
+				8CA037CF20F547AB00A81E55 /* WebrequestUIUpdateProtocol.h */,
+				8CA037D020F54C6E00A81E55 /* Utilities.h */,
+				8CA037D120F54C6E00A81E55 /* Utilities.m */,
+				8CA037D920F5A41D00A81E55 /* DataHolder.h */,
+				8CA037DA20F5A41D00A81E55 /* DataHolder.m */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +265,15 @@
 			files = (
 				8CA037AE20F4F91400A81E55 /* ViewController.m in Sources */,
 				8CA037C320F5013300A81E55 /* WeatherViewController.m in Sources */,
+				8CA037D220F54C6E00A81E55 /* Utilities.m in Sources */,
+				8CA037D520F59B3C00A81E55 /* HotelTableViewCell.m in Sources */,
 				8CA037C620F5014700A81E55 /* HotelViewController.m in Sources */,
 				8CA037B920F4F91600A81E55 /* main.m in Sources */,
+				8CA037DB20F5A41D00A81E55 /* DataHolder.m in Sources */,
+				8CA037CE20F5464100A81E55 /* DataCenter.m in Sources */,
 				8CA037AB20F4F91400A81E55 /* AppDelegate.m in Sources */,
+				8CA037D820F5A1E500A81E55 /* Hotel.m in Sources */,
+				8CA037CB20F53ECE00A81E55 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

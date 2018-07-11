@@ -10,4 +10,5 @@
 
 @interface HotelViewController : UIViewController
 
+@property (retain,nonatomic) NSArray *passedInfo;
 @end

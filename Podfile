@@ -7,4 +7,7 @@ target 'assessment-test' do
 
   # Pods for assessment-test
 
+pod 'ASIHTTPRequest', '~> 1.8'
+pod 'MBProgressHUD', '~> 0.9'
+
 end
