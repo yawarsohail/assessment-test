@@ -45,6 +45,18 @@ static Utilities *utilities=nil;
     return false;
 }
 
+-(NSString *)getDateFromString:(NSString*)timeStamp format:(NSString *)format{
+    double unixTimeStamp = [timeStamp doubleValue];
+    NSTimeInterval _interval=unixTimeStamp;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
+    
+    NSString *Formatter =format;
+    NSDateFormatter *outputDateFormatter = [[NSDateFormatter alloc] init];
+    [outputDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [outputDateFormatter setDateFormat:Formatter];
+    NSString *outputString = [outputDateFormatter stringFromDate:date];
+    return outputString;
+}
 
 -(NSString*) setValue:(NSDictionary*)dictionary forKey:(NSString*)key replaceWith:(NSString*)replaceWith {
     return ([dictionary objectForKey:key] == (id)[NSNull null] || [dictionary objectForKey:key] == nil) ? replaceWith : [NSString stringWithFormat:@"%@",[dictionary objectForKey:key]];

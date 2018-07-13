@@ -10,9 +10,11 @@
 
 @interface DataHolder : NSObject {
 
-NSMutableArray *hotels;
+    NSMutableArray *hotels;
+    NSMutableArray *weathers;
 }
 @property (nonatomic, retain) NSMutableArray *hotels;
+@property (nonatomic, retain) NSMutableArray *weathers;
 
 +(DataHolder *) Instance;
 

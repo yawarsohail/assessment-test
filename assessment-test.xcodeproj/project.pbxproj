@@ -22,6 +22,7 @@
 		8CA037D520F59B3C00A81E55 /* HotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037D420F59B3C00A81E55 /* HotelTableViewCell.m */; };
 		8CA037D820F5A1E500A81E55 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037D720F5A1E500A81E55 /* Hotel.m */; };
 		8CA037DB20F5A41D00A81E55 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037DA20F5A41D00A81E55 /* DataHolder.m */; };
+		8CA037DF20F7C66600A81E55 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037DE20F7C66600A81E55 /* Weather.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,9 @@
 		8CA037D920F5A41D00A81E55 /* DataHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHolder.h; sourceTree = "<group>"; };
 		8CA037DA20F5A41D00A81E55 /* DataHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHolder.m; sourceTree = "<group>"; };
 		8CA037DC20F5A8EA00A81E55 /* HotelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelProtocol.h; sourceTree = "<group>"; };
+		8CA037DD20F7C66600A81E55 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		8CA037DE20F7C66600A81E55 /* Weather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		8CA037E020F7DBB500A81E55 /* WeatherProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherProtocol.h; sourceTree = "<group>"; };
 		BC78FE21D7DDEAC454409300 /* Pods-assessment-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assessment-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-assessment-test/Pods-assessment-test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +146,7 @@
 			children = (
 				8CA037C120F5013300A81E55 /* WeatherViewController.h */,
 				8CA037C220F5013300A81E55 /* WeatherViewController.m */,
+				8CA037E020F7DBB500A81E55 /* WeatherProtocol.h */,
 			);
 			path = WeatherComponent;
 			sourceTree = "<group>";
@@ -151,6 +156,8 @@
 			children = (
 				8CA037D620F5A1E500A81E55 /* Hotel.h */,
 				8CA037D720F5A1E500A81E55 /* Hotel.m */,
+				8CA037DD20F7C66600A81E55 /* Weather.h */,
+				8CA037DE20F7C66600A81E55 /* Weather.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA037DF20F7C66600A81E55 /* Weather.m in Sources */,
 				8CA037AE20F4F91400A81E55 /* ViewController.m in Sources */,
 				8CA037C320F5013300A81E55 /* WeatherViewController.m in Sources */,
 				8CA037D220F54C6E00A81E55 /* Utilities.m in Sources */,

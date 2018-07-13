@@ -9,7 +9,7 @@
 #import "DataHolder.h"
 
 @implementation DataHolder
-@synthesize hotels;
+@synthesize hotels,weathers;
 static DataHolder *dataHolder=nil;
 +(void) initialize
 {

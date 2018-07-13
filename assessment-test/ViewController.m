@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "Hotel.h"
 #import "HotelViewController.h"
+#import "WeatherViewController.h"
 #import "MBProgressHUD.h"
 
 @interface ViewController ()<CLLocationManagerDelegate>
@@ -28,10 +29,9 @@
 }
 
 - (IBAction)actionHotel:(id)sender {
-    // TODO : Use location to get lat, lng.
+    isHotel = YES;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.locationManager.delegate = self;
-    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
@@ -39,6 +39,13 @@
 }
 
 - (IBAction)actionWeather:(id)sender {
+    isHotel = NO;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.locationManager.delegate = self;
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
 }
 
 -(void) responseFromWServer:(NSDictionary *)response withIdentifier:(NSString *)identifier{
@@ -59,6 +66,9 @@
         nextViewController.passedInfo = hotels;
     }
     else if([[segue identifier] isEqualToString:@"showweathersegue"]) {
+        WeatherViewController *nextViewController = segue.destinationViewController;
+        nextViewController.passedInfo = [DataHolder Instance].weathers;
+        nextViewController.countryName = self.countryName;
     }
 }
 
@@ -70,8 +80,8 @@
         [manager requestWhenInUseAuthorization];
     }
 }
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    //NSLog(@"didFailWithError: %@", error);
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                  message:@"Failed to Get Your Location"
@@ -81,22 +91,39 @@
     [self presentViewController:errorAlert animated:YES completion:nil];
 }
 
-// Location Manager Delegate Methods
-//- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-//{
-//    NSLog(@"%@", [locations lastObject]);
-//}
-
-
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
     CLLocation *currentLocation = [locations lastObject];
     if (currentLocation != nil) {
         NSString* lon = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         NSString* lat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        NSString* countryName = @"";
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error)
+         {
+             if (!(error))
+             {
+                 CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                 NSLog(@"\nCurrent Location Detected\n");
+                 NSLog(@"placemark %@",placemark);
+                 
+                 self.countryName = placemark.country;
+             }
+             else
+             {
+                 NSLog(@"Geocode failed with error %@", error);
+                 NSLog(@"\nCurrent Location Not Detected\n");
+             }
+         }];
+        
         [self.locationManager stopUpdatingLocation];
         self.locationManager.delegate = nil;
-        [[DataCenter Instance] getHotels:lat lng:lon delegate:self];
+        if (isHotel) {
+            [[DataCenter Instance] getHotels:lat lng:lon delegate:self];
+        }
+        else {
+            [[DataCenter Instance] getWeather:lat lng:lon delegate:self];
+        }
     }
 }
 @end

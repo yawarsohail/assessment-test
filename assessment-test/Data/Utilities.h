@@ -12,5 +12,6 @@
 
 +(Utilities *) Instance;
 -(BOOL) isConnected;
+-(NSString *)getDateFromString:(NSString*)timeStamp format:(NSString *)format;
 -(NSString*) setValue:(NSDictionary*)dictionary forKey:(NSString*)key replaceWith:(NSString*)replaceWith ;
 @end

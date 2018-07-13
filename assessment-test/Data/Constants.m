@@ -30,11 +30,25 @@ static Constants *constants=nil;
     return hotelURL;
 }
 
+-(NSString*) weatherURL
+{
+    if(!weatherURL)
+        weatherURL = @"https://api.darksky.net/forecast/%@/%@,%@?exclude=minutely,hourly,alerts,flags";
+    return weatherURL;
+}
+
 -(NSString*) gApiKey
 {
     if(!gApiKey)
         gApiKey = @"AIzaSyD-HMhoKtAz7xJrMMYS2zBz3Mx_tGks3q4";
     return gApiKey;
+}
+
+-(NSString*) weatherApiKey
+{
+    if(!weatherApiKey)
+        weatherApiKey = @"d3500e1675ddfc52d95543aea38d1441";
+    return weatherApiKey;
 }
 
 -(NSString*) hotelKey
@@ -51,4 +65,13 @@ static Constants *constants=nil;
     return weatherKey;
 }
 
+-(NSString *) TimeFormatThread
+{
+    return @"EEE";
+}
+
+-(NSString *) DayFormatThread
+{
+    return @"EEEE";
+}
 @end

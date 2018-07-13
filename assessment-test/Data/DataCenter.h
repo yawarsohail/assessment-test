@@ -14,5 +14,6 @@
 +(DataCenter *) Instance;
 
 -(void) getHotels:(NSString *) lat lng:(NSString*)lng delegate:(id<WebrequestUIUpdateProtocol>) delegate;
+-(void) getWeather:(NSString *) lat lng:(NSString*)lng delegate:(id<WebrequestUIUpdateProtocol>) delegate;
 -(UIImage*) getImageFromUrlOrCache:(NSString *)url fileName:(NSString *)fileName delegate:(id<WebrequestUIUpdateProtocol>)delegate;
 @end

@@ -11,6 +11,7 @@
 #import "Utilities.h"
 #import "Constants.h"
 #import "Hotel.h"
+#import "Weather.h"
 #import "DataHolder.h"
 
 @implementation DataCenter
@@ -64,6 +65,47 @@ static DataCenter *dataCenter=nil;
     }
 }
 
+-(void) getWeather:(NSString *) lat lng:(NSString*)lng delegate:(id<WebrequestUIUpdateProtocol>) delegate {
+    if([[Utilities Instance] isConnected]){
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:[Constants Instance].weatherURL,[Constants Instance].weatherApiKey,lat,lng]];
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+        [request setRequestMethod:@"GET"];
+        [request setDelegate:self];
+        if(delegate !=nil){
+            [request setUserInfo:[NSDictionary dictionaryWithObject:delegate forKey:@"delegate"]];
+        }
+        [request setDidFinishSelector:@selector(getWeatherResponse:)];
+        [request startAsynchronous];
+    }
+}
+
+- (void)getWeatherResponse:(ASIFormDataRequest *)request {
+    // Use when fetching text data
+    NSString *responseString = [request responseString];
+    NSLog(@"%@",responseString);
+    NSData *data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+    id response = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    [DataHolder Instance].weathers = [[NSMutableArray alloc] init];
+    NSDictionary* current = [response objectForKey:@"currently"];
+    Weather* weather = [[Weather alloc] init];
+    [weather setWeatherFrom:current];
+    [[DataHolder Instance].weathers addObject:weather];
+    NSDictionary* dailyObj = [response objectForKey:@"daily"];
+    NSArray* daily = [dailyObj objectForKey:@"data"];
+    for(int n = 1; n < 6; n++) {
+        NSDictionary* weatherData = [daily objectAtIndex:n];
+        Weather* weather = [[Weather alloc] init];
+        [weather setWeatherFrom:weatherData];
+        [[DataHolder Instance].weathers addObject:weather];
+    }
+    
+    NSLog(@"%@",[response objectForKey:@"Status"]);
+    if([[request userInfo] objectForKey:@"delegate"]!=nil){
+        id delegate = [[request userInfo] objectForKey:@"delegate"];
+        [delegate responseFromWServer:response withIdentifier:[[Constants Instance] weatherKey] ];
+    }
+}
+
 
 -(UIImage*) getImageFromUrlOrCache:(NSString *)url fileName:(NSString *)fileName delegate:(id<WebrequestUIUpdateProtocol>)delegate{
     NSString* iden = fileName;
@@ -90,13 +132,10 @@ static DataCenter *dataCenter=nil;
                 NSData *downloadedData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:NSUncachedRead error:&err];
                 if(err)
                     NSLog(@"Error  : %@",[err description]);
-                
                 if (downloadedData) {
                     [downloadedData writeToFile:file atomically:YES];
-                    
                     dispatch_async(dispatch_get_main_queue(), ^(){
-                        if(delegate != nil)
-                        {
+                        if(delegate != nil) {
                             UIImage *newiImg = [UIImage imageWithData:downloadedData];
                             [delegate updateImage:newiImg identifier:iden];
                         }
@@ -104,7 +143,6 @@ static DataCenter *dataCenter=nil;
                 }
             });
         }
-        
         return img;
     }
     return nil;
