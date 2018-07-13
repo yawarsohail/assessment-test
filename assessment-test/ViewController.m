@@ -30,7 +30,7 @@
 }
 
 - (IBAction)actionHotel:(id)sender {
-    isHotel = YES;
+    self.isHotel = YES;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.locationManager.delegate = self;
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
@@ -40,7 +40,7 @@
 }
 
 - (IBAction)actionWeather:(id)sender {
-    isHotel = NO;
+    self.isHotel = NO;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.locationManager.delegate = self;
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
@@ -96,9 +96,10 @@
      didUpdateLocations:(NSArray *)locations {
     CLLocation *currentLocation = [locations lastObject];
     if (currentLocation != nil) {
+        [self.locationManager stopUpdatingLocation];
+        self.locationManager.delegate = nil;
         NSString* lon = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         NSString* lat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        NSString* countryName = @"";
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error)
          {
@@ -115,16 +116,15 @@
                  NSLog(@"Geocode failed with error %@", error);
                  NSLog(@"\nCurrent Location Not Detected\n");
              }
+             
+             if (self.isHotel) {
+                 [[DataCenter Instance] getHotels:lat lng:lon delegate:self];
+             }
+             else {
+                 [[DataCenter Instance] getWeather:lat lng:lon delegate:self];
+             }
          }];
         
-        [self.locationManager stopUpdatingLocation];
-        self.locationManager.delegate = nil;
-        if (isHotel) {
-            [[DataCenter Instance] getHotels:lat lng:lon delegate:self];
-        }
-        else {
-            [[DataCenter Instance] getWeather:lat lng:lon delegate:self];
-        }
     }
 }
 @end

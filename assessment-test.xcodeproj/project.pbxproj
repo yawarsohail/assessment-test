@@ -23,6 +23,7 @@
 		8CA037D820F5A1E500A81E55 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037D720F5A1E500A81E55 /* Hotel.m */; };
 		8CA037DB20F5A41D00A81E55 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037DA20F5A41D00A81E55 /* DataHolder.m */; };
 		8CA037DF20F7C66600A81E55 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA037DE20F7C66600A81E55 /* Weather.m */; };
+		8CA037E220F8811800A81E55 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 8CA037E120F8811800A81E55 /* ReadMe.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		8CA037DD20F7C66600A81E55 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		8CA037DE20F7C66600A81E55 /* Weather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		8CA037E020F7DBB500A81E55 /* WeatherProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherProtocol.h; sourceTree = "<group>"; };
+		8CA037E120F8811800A81E55 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		BC78FE21D7DDEAC454409300 /* Pods-assessment-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assessment-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-assessment-test/Pods-assessment-test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 		8CA0379D20F4F91400A81E55 = {
 			isa = PBXGroup;
 			children = (
+				8CA037E120F8811800A81E55 /* ReadMe.md */,
 				8CA037A820F4F91400A81E55 /* assessment-test */,
 				8CA037A720F4F91400A81E55 /* Products */,
 				3190F344786B3648B9E0CD50 /* Pods */,
@@ -238,6 +241,7 @@
 			files = (
 				8CA037B620F4F91600A81E55 /* LaunchScreen.storyboard in Resources */,
 				8CA037B320F4F91600A81E55 /* Assets.xcassets in Resources */,
+				8CA037E220F8811800A81E55 /* ReadMe.md in Resources */,
 				8CA037B120F4F91400A81E55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

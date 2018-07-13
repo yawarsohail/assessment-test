@@ -11,11 +11,9 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface ViewController : UIViewController<WebrequestUIUpdateProtocol>
-{
-    BOOL isHotel;
-}
 
 @property (retain,nonatomic) NSString *countryName;
+@property (nonatomic) BOOL isHotel;
 - (IBAction)actionHotel:(id)sender;
 - (IBAction)actionWeather:(id)sender;
 
