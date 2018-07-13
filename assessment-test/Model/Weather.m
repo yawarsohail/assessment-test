@@ -42,16 +42,16 @@
     return [NSString stringWithFormat:@"%.0f", _tempratureHigh.doubleValue];
 }
 
--(NSNumber*) getHumidity{
-    return _humidity;
+-(NSString*) getHumidity{
+    return [NSString stringWithFormat:@"%.0f%%", _humidity.doubleValue*100];
 }
 
--(NSNumber*) getPrecip{
-    return _precip;
+-(NSString*) getPrecip{
+    return [NSString stringWithFormat:@"%.0f%%", _precip.doubleValue*100];
 }
 
--(NSNumber*) getWind{
-    return _windSpeed;
+-(NSString*) getWind{
+    return [NSString stringWithFormat:@"%.0fKm/h", _windSpeed.doubleValue];
 }
 
 -(NSString*) getIcon{

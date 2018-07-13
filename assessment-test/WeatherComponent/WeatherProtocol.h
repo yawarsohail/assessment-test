@@ -20,9 +20,9 @@
 -(NSString*) getTemp;
 -(NSString*) getTempLow;
 -(NSString*) getTempHigh;
--(NSNumber*) getHumidity;
--(NSNumber*) getPrecip;
--(NSNumber*) getWind;
+-(NSString*) getHumidity;
+-(NSString*) getPrecip;
+-(NSString*) getWind;
 -(NSString*) getIcon;
 -(NSString*) getDetail;
 

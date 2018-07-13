@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setTitle:@"Home"];
     self.locationManager = [[CLLocationManager alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
 }

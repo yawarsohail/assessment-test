@@ -17,22 +17,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setTitle:@"Weather"];
+    [self showUIData];
+    // Do any additional setup after loading the view.
+}
+
+-(void)showUIData {
     [self.CountryNameLabel setText:self.countryName];
     id<WeatherProtocol> current = self.passedInfo[0];
     [self.dayLabel setText:[current getDay]];
     [self.detailLabel setText:[current getDetail]];
     [self.currentIcon setImage:[UIImage imageNamed:[current getIcon]]];
     [self.currentTemprature setText:[NSString stringWithFormat:@"%@", [current getTemp]]];
-    
+    [self.preciLabel setText:[current getPrecip]];
+    [self.humidityLabel setText:[current getHumidity]];
+    [self.windLabel setText:[current getWind]];
     
     for (int i=0; i<[self.passedInfo count]-1; i++) {
         id<WeatherProtocol> w = self.passedInfo[i+1];
         [(UILabel*)self.daysLabel[i] setText:[NSString stringWithFormat:@"%@", [w getTime]]];
         [(UILabel*)self.tempLabels[i] setText:[NSString stringWithFormat:@"%@°|%@°", [w getTempLow],[w getTempHigh]]];
-
         [(UIImageView*)self.iconImages[i] setImage:[UIImage imageNamed:[w getIcon]]];
     }
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,14 +46,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

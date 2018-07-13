@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *currentIcon;
 @property (weak, nonatomic) IBOutlet UILabel *currentTemprature;
 @property (weak, nonatomic) IBOutlet UILabel *Value;
+@property (weak, nonatomic) IBOutlet UILabel *preciLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windLabel;
 
 @property (retain,nonatomic) NSArray *passedInfo;
 @property (retain,nonatomic) NSString *countryName;
